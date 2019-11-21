@@ -55,6 +55,7 @@
 #include "../Common/ReturnValues.h"
 #include "../Common/importRawData.h"
 #include "../Common/parseRow.h"
+#include "../Common/Crash.h"
 
 
 //
@@ -98,13 +99,13 @@ std::vector<std::vector<double>> importParameters() {
 				double x = stod(numerator) / stod(denominator);
 				temp.push_back(x);
 			}
-
 		}
 
-		parameters.push_back(temp);
+		if (temp.size() == _Number_Of_Parameters_)
+			parameters.push_back(temp);
+		else
+			crash(__LINE__, __FILE__, __FUNCTION__, "Incorrect number of parameters: " + v);
 	}
-
-
 
 	return parameters;
 }
