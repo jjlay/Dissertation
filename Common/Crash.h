@@ -30,37 +30,23 @@
  *
  */
 
- //
- // Standard Includes
- //
-
-#include <iostream>
-#include <iomanip>
-#include <random>
-#include <chrono>
+#pragma once
 
 //
-// STL Includes
+// Standard Includes
 //
 
-#include <vector>
 #include <string>
 
 
 //
-// Local includes
+// Function: crash()
+//
+// Paraeters:
+//
+// Returns:
+//    Nothing
 //
 
-#include "../Common/Parameters.h"
-#include "../Common/ReturnValues.h"
-
-
-std::vector<std::vector<double>> importParameters() {
-
-	std::string filename = "../Common/parameters.csv";
-
-	std::vector<std::vector<double>> parameters;
-
-	return parameters;
-}
+void crash(unsigned int pLine, std::string pFile, std::string pFunction, std::string pMessage);
 

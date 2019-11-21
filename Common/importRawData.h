@@ -30,37 +30,5 @@
  *
  */
 
- //
- // Standard Includes
- //
-
-#include <iostream>
-#include <iomanip>
-#include <random>
-#include <chrono>
-
-//
-// STL Includes
-//
-
-#include <vector>
-#include <string>
-
-
-//
-// Local includes
-//
-
-#include "../Common/Parameters.h"
-#include "../Common/ReturnValues.h"
-
-
-std::vector<std::vector<double>> importParameters() {
-
-	std::string filename = "../Common/parameters.csv";
-
-	std::vector<std::vector<double>> parameters;
-
-	return parameters;
-}
+#pragma once
 

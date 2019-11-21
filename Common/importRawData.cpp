@@ -30,37 +30,58 @@
  *
  */
 
- //
- // Standard Includes
- //
 
-#include <iostream>
-#include <iomanip>
-#include <random>
-#include <chrono>
+//
+// Local Includes
+//
+
+#include "../Common/Crash.h"
+#include "../Common/Trim.h"
+
+
+//
+// Standard Includes
+//
+
+#include <string>
+#include <fstream>
+
 
 //
 // STL Includes
 //
 
 #include <vector>
-#include <string>
 
 
 //
-// Local includes
+// Function: importRawData()
+//
+// Parameters:
+//
+// Returns:
 //
 
-#include "../Common/Parameters.h"
-#include "../Common/ReturnValues.h"
+std::vector<std::string> importRawData(std::string pFilename) {
 
+	std::ifstream inFile(pFilename, std::ios::in);
 
-std::vector<std::vector<double>> importParameters() {
+	if (!inFile.is_open()) {
+		crash(__LINE__, __FILE__, __FUNCTION__, "Unable to open " + pFilename);
+	}
 
-	std::string filename = "../Common/parameters.csv";
+	std::vector<std::string> rawData;
 
-	std::vector<std::vector<double>> parameters;
+	std::string line;
 
-	return parameters;
+	while (std::getline(inFile, line)) {
+		trim(line);
+
+		if (line.size() > 0)
+			rawData.push_back(line);
+	}
+
+	return rawData;
 }
+
 

@@ -30,37 +30,38 @@
  *
  */
 
+#pragma once
+
+#include <locale>
+#include <algorithm>
+#include <cstring>
+#include <cctype>
+
+
  //
- // Standard Includes
+ // Trim functions
+ //
+ // Source:
+ // https://stackoverflow.com/questions/216823/whats-the-best-way-to-trim-stdstring
  //
 
-#include <iostream>
-#include <iomanip>
-#include <random>
-#include <chrono>
+ // trim from start (in place)
+static inline void ltrim(std::string& s) {
+	s.erase(s.begin(), std::find_if(s.begin(), s.end(), [](int ch) {
+		return !std::isspace(ch);
+		}));
+}
 
-//
-// STL Includes
-//
+// trim from end (in place)
+static inline void rtrim(std::string& s) {
+	s.erase(std::find_if(s.rbegin(), s.rend(), [](int ch) {
+		return !std::isspace(ch);
+		}).base(), s.end());
+}
 
-#include <vector>
-#include <string>
-
-
-//
-// Local includes
-//
-
-#include "../Common/Parameters.h"
-#include "../Common/ReturnValues.h"
-
-
-std::vector<std::vector<double>> importParameters() {
-
-	std::string filename = "../Common/parameters.csv";
-
-	std::vector<std::vector<double>> parameters;
-
-	return parameters;
+// trim from both ends (in place)
+static inline void trim(std::string& s) {
+	ltrim(s);
+	rtrim(s);
 }
 
