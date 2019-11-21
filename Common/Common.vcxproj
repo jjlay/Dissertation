@@ -151,10 +151,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Common.cpp" />
+    <ClCompile Include="importParameters.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="parameters.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="importParameters.h" />
+    <ClInclude Include="Parameters.h" />
+    <ClInclude Include="ReturnValues.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

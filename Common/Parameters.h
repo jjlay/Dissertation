@@ -30,53 +30,15 @@
  *
  */
 
- //
- // Standard Includes
- //
+#pragma once
 
-#include <iostream>
-#include <iomanip>
-#include <random>
-#include <chrono>
+#define _Number_Of_Parameters_   7
 
-//
-// STL Includes
-//
-
-#include <vector>
-
-
-//
-// Local includes
-//
-
-#include "../Common/Parameters.h"
-#include "../Common/ReturnValues.h"
-#include "../Common/importParameters.h"
-
-
-//
-// Function: main()
-// 
-// Parameters:
-//    argc - 
-//    argv -
-//
-// Returns:
-//    Execution status (int)
-//
-
-int main(int argc, char *argv[])
-{
-	auto SimulationStart = std::chrono::system_clock::now();
-
-	//
-	// Parameters
-	//
-
-	auto parameters = importParameters();
-
-	return _OKAY_;
-}
-
+#define _K_            0
+#define _T_            1
+#define _v_            2
+#define _Kv_           3
+#define _sigmav_       4
+#define _rho12_        5
+#define _ClosedForm_   6
 

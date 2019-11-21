@@ -52,31 +52,12 @@
 
 #include "../Common/Parameters.h"
 #include "../Common/ReturnValues.h"
-#include "../Common/importParameters.h"
 
 
-//
-// Function: main()
-// 
-// Parameters:
-//    argc - 
-//    argv -
-//
-// Returns:
-//    Execution status (int)
-//
+std::vector<std::vector<double>> importParameters() {
 
-int main(int argc, char *argv[])
-{
-	auto SimulationStart = std::chrono::system_clock::now();
+	std::vector<std::vector<double>> parameters;
 
-	//
-	// Parameters
-	//
-
-	auto parameters = importParameters();
-
-	return _OKAY_;
+	return parameters;
 }
-
 
