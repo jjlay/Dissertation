@@ -53,13 +53,58 @@
 
 #include "../Common/Parameters.h"
 #include "../Common/ReturnValues.h"
+#include "../Common/importRawData.h"
+#include "../Common/parseRow.h"
 
+
+//
+// Function: importParameters()
+//
+// Paremeters:
+//
+// Returns:
+//
 
 std::vector<std::vector<double>> importParameters() {
 
 	std::string filename = "../Common/parameters.csv";
 
+	auto rawData = importRawData(filename);
+
+	// Remove the header row
+	rawData.erase(rawData.begin());
+
 	std::vector<std::vector<double>> parameters;
+
+	for (auto v : rawData) {
+		auto parsedData = parseRow(v);
+
+		std::vector<double> temp;
+
+		for (auto w : parsedData) {
+
+			// Is it a fraction?
+			auto loc = w.find("/");
+
+			if (loc == std::string::npos) {
+				// Not a fraction
+				double x = stod(w);
+				temp.push_back(x);
+			}
+			else {
+				// Must be a fraction
+				auto numerator = w.substr(0, w.find("/") - 1);
+				auto denominator = w.substr(w.find("/") + 1);
+				double x = stod(numerator) / stod(denominator);
+				temp.push_back(x);
+			}
+
+		}
+
+		parameters.push_back(temp);
+	}
+
+
 
 	return parameters;
 }

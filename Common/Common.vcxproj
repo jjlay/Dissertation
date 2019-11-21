@@ -155,6 +155,7 @@
     <ClCompile Include="Crash.cpp" />
     <ClCompile Include="importParameters.cpp" />
     <ClCompile Include="importRawData.cpp" />
+    <ClCompile Include="parseRow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="parameters.csv" />
@@ -164,6 +165,7 @@
     <ClInclude Include="importParameters.h" />
     <ClInclude Include="importRawData.h" />
     <ClInclude Include="Parameters.h" />
+    <ClInclude Include="parseRow.h" />
     <ClInclude Include="ReturnValues.h" />
     <ClInclude Include="Trim.h" />
   </ItemGroup>

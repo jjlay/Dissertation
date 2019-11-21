@@ -32,5 +32,20 @@
 
 #pragma once
 
-std::vector<std::string> importRawData(std::string pFilename);
+
+ //
+ // Standard Includes
+ //
+
+#include <string>
+
+
+//
+// STL Includes
+//
+
+#include <vector>
+
+
+std::vector<std::string> parseRow(std::string pLine);
 
