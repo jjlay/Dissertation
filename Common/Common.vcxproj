@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{3C9D8A1A-D067-4609-9E0C-FEDD4BE58D6F}</ProjectGuid>
+    <ProjectGuid>{74B80B24-7B78-4E85-B239-D867FC087E53}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Dissertation</RootNamespace>
+    <RootNamespace>Common</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -151,7 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Dissertation.cpp" />
+    <ClCompile Include="Common.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
