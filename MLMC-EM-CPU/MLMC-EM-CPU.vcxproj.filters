@@ -13,10 +13,16 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Miscellaneous">
+      <UniqueIdentifier>{d9a53025-ee13-4ee9-a005-b03c709fc88d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MLMC-EM-CPU.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Makefile">
+      <Filter>Miscellaneous</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

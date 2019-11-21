@@ -1,3 +1,26 @@
+
+/*
+* CUDA Based Monte Carlo Simulation of European Put
+* Euler-Muryama Method
+*
+* Implementation of
+* Alexey Medvedev, Olivier Scaillet "Pricing American options under
+* stochastic volatility and stochastic interest rates"
+* Journal of Financial Economics. 2010.
+*
+* See also
+* Lay, H., Colgin, Z., Reshniak, V., Khaliq, A.Q.M. (2018).
+* "On the implementation of multilevel Monte Carlo simulation
+* of the stochastic volatility and interest rate model using
+* multi-GPU clusters." Monte Carlo Methods and Applications,
+* 24(4), pp. 309-321.
+*
+* JJ Lay
+* Middle Tennessee State University
+* January 2015
+*
+*/
+
 // MC-EM-CPU.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
