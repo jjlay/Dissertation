@@ -30,61 +30,25 @@
  *
  */
 
-
-//
-// Local Includes
-//
-
-#include "../Common/Crash.h"
-#include "../Common/Trim.h"
+#pragma once
 
 
 //
-// Standard Includes
+// Local includes
 //
 
-#include <string>
-#include <fstream>
-#include <iostream>
+#include "../Common/Results.h"
 
 
 //
-// STL Includes
+// STL includes
 //
 
-#include <vector>
+#include <array>
 
 
-//
-// Function: importRawData()
-//
-// Parameters:
-//
-// Returns:
-//
-
-std::vector<std::string> importRawData(std::string pFilename) {
-
-	std::ifstream inFile(pFilename, std::ios::in);
-
-	if (!inFile.is_open()) {
-		crash(__LINE__, __FILE__, __FUNCTION__, "Unable to open " + pFilename);
-	}
-
-	std::vector<std::string> rawData;
-
-	std::string line;
-
-	while (std::getline(inFile, line)) {
-		trim(line);
-
-		if (line.size() > 0)
-			rawData.push_back(line);
-	}
-
-	std::cout << "Imported " << rawData.size() << " rows from the file" << std::endl;
-
-	return rawData;
-}
-
+std::array<double, _RESULT_WIDTH_> simulateMCEMCPU(double pK, double pT,
+	double pv, double pKv, double psigmav, double theta, double rbar, double Kr,
+	double psigmar, double pclosedForm, 
+	std::array<std::array<double, 3>, 3> pcorrelationMatrix);
 

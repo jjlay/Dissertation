@@ -31,60 +31,13 @@
  */
 
 
-//
-// Local Includes
-//
+#pragma once
 
-#include "../Common/Crash.h"
-#include "../Common/Trim.h"
+#define _RESULT_WIDTH_  5
 
-
-//
-// Standard Includes
-//
-
-#include <string>
-#include <fstream>
-#include <iostream>
-
-
-//
-// STL Includes
-//
-
-#include <vector>
-
-
-//
-// Function: importRawData()
-//
-// Parameters:
-//
-// Returns:
-//
-
-std::vector<std::string> importRawData(std::string pFilename) {
-
-	std::ifstream inFile(pFilename, std::ios::in);
-
-	if (!inFile.is_open()) {
-		crash(__LINE__, __FILE__, __FUNCTION__, "Unable to open " + pFilename);
-	}
-
-	std::vector<std::string> rawData;
-
-	std::string line;
-
-	while (std::getline(inFile, line)) {
-		trim(line);
-
-		if (line.size() > 0)
-			rawData.push_back(line);
-	}
-
-	std::cout << "Imported " << rawData.size() << " rows from the file" << std::endl;
-
-	return rawData;
-}
-
+#define _RESULT_MEAN_   0
+#define _RESULT_VAR_    1
+#define _RESULT_N_      2
+#define _ERROR_WEAK_    3
+#define _ERROR_STRONG_  4
 

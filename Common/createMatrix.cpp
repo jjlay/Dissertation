@@ -32,59 +32,34 @@
 
 
 //
-// Local Includes
-//
-
-#include "../Common/Crash.h"
-#include "../Common/Trim.h"
-
-
-//
-// Standard Includes
-//
-
-#include <string>
-#include <fstream>
-#include <iostream>
-
-
-//
 // STL Includes
 //
 
-#include <vector>
+#include <array>
 
 
 //
-// Function: importRawData()
+// Function: createMatrix()
 //
 // Parameters:
 //
 // Returns:
 //
 
-std::vector<std::string> importRawData(std::string pFilename) {
+std::array<std::array<double, 3>, 3> createMatrix(double pRho12, double pRho13, double pRho23) {
 
-	std::ifstream inFile(pFilename, std::ios::in);
+	std::array<std::array<double, 3>, 3> correlationMatrix;
 
-	if (!inFile.is_open()) {
-		crash(__LINE__, __FILE__, __FUNCTION__, "Unable to open " + pFilename);
-	}
+	for (auto i = 0; i < 3; i++)
+		correlationMatrix[i][i] = 1.0;
 
-	std::vector<std::string> rawData;
+	correlationMatrix[0][1] = pRho12;
+	correlationMatrix[1][0] = pRho12;
+	correlationMatrix[0][2] = pRho13;
+	correlationMatrix[2][0] = pRho13;
+	correlationMatrix[1][2] = pRho23;
+	correlationMatrix[2][1] = pRho23;
 
-	std::string line;
-
-	while (std::getline(inFile, line)) {
-		trim(line);
-
-		if (line.size() > 0)
-			rawData.push_back(line);
-	}
-
-	std::cout << "Imported " << rawData.size() << " rows from the file" << std::endl;
-
-	return rawData;
+	return correlationMatrix;
 }
-
 

@@ -32,59 +32,36 @@
 
 
 //
-// Local Includes
+// STL include
 //
 
-#include "../Common/Crash.h"
-#include "../Common/Trim.h"
-
-
-//
-// Standard Includes
-//
-
-#include <string>
-#include <fstream>
-#include <iostream>
+#include <array>
 
 
 //
-// STL Includes
-//
-
-#include <vector>
-
-
-//
-// Function: importRawData()
+// Function: multiply()
 //
 // Parameters:
 //
+//
 // Returns:
 //
+//
+// Comments:
+//    This could be replaced by functions from BLAS.
+//
 
-std::vector<std::string> importRawData(std::string pFilename) {
+std::array<double, 3> multiply(std::array<std::array<double, 3>, 3> pmatrix, std::array<double, 3> pvector) {
 
-	std::ifstream inFile(pFilename, std::ios::in);
+	std::array<double, 3> result;
 
-	if (!inFile.is_open()) {
-		crash(__LINE__, __FILE__, __FUNCTION__, "Unable to open " + pFilename);
+	for (auto r = 0; r < 3; r++) {
+		result[r] = 0.0;
+
+		for (auto c = 0; c < 3; c++)
+			result[r] += pmatrix[r][c] * pvector[c];
 	}
 
-	std::vector<std::string> rawData;
-
-	std::string line;
-
-	while (std::getline(inFile, line)) {
-		trim(line);
-
-		if (line.size() > 0)
-			rawData.push_back(line);
-	}
-
-	std::cout << "Imported " << rawData.size() << " rows from the file" << std::endl;
-
-	return rawData;
+	return result;
 }
-
 

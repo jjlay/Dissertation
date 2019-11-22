@@ -21,8 +21,10 @@
     <ClCompile Include="MLMC-EM-CPU.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Makefile">
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Makefile">
       <Filter>Miscellaneous</Filter>
-    </ClCompile>
+    </Text>
   </ItemGroup>
 </Project>

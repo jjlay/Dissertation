@@ -46,7 +46,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -153,6 +153,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Crash.cpp" />
+    <ClCompile Include="createMatrix.cpp" />
     <ClCompile Include="importParameters.cpp" />
     <ClCompile Include="importRawData.cpp" />
     <ClCompile Include="parseRow.cpp" />
@@ -162,10 +163,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Crash.h" />
+    <ClInclude Include="createMatrix.h" />
     <ClInclude Include="importParameters.h" />
     <ClInclude Include="importRawData.h" />
+    <ClCompile Include="multiplyMatrixVector.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+      <FileType>CppHeader</FileType>
+    </ClCompile>
+    <ClInclude Include="multiplyMatrixVector.h" />
     <ClInclude Include="Parameters.h" />
     <ClInclude Include="parseRow.h" />
+    <ClInclude Include="Results.h" />
     <ClInclude Include="ReturnValues.h" />
     <ClInclude Include="Trim.h" />
   </ItemGroup>

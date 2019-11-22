@@ -107,6 +107,8 @@ std::vector<std::vector<double>> importParameters() {
 			crash(__LINE__, __FILE__, __FUNCTION__, "Incorrect number of parameters: " + v);
 	}
 
+	std::cout << "There were " << parameters.size() << " parameter sets" << std::endl;
+
 	return parameters;
 }
 

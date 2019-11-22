@@ -53,6 +53,10 @@
 #include "../Common/Parameters.h"
 #include "../Common/ReturnValues.h"
 #include "../Common/importParameters.h"
+#include "../Common/Crash.h"
+#include "../Common/createMatrix.h"
+
+#include "Simulate-MC-EM-CPU.h"
 
 
 //
@@ -75,6 +79,83 @@ int main(int argc, char *argv[])
 	//
 
 	auto parameters = importParameters();
+
+	if (parameters.size() == 0)
+		crash(__LINE__, __FILE__, __FUNCTION__, "No parameters to process");
+
+	auto ImportedParameters = std::chrono::system_clock::now();
+
+	//
+	// Perform simulations
+	//
+
+	for (auto p = 0; p < parameters.size(); p++) {
+		std::cout << "=== Parameter Set " << p << " ===" << std::endl;
+
+		auto set = parameters[p];
+
+		auto K = set[_K_];
+		auto T = set[_T_];
+		auto v = set[_v_];
+		auto Kv = set[_Kv_];
+		auto sigmav = set[_sigmav_];
+		auto rho12 = set[_rho12_];
+		auto closedForm = set[_ClosedForm_];
+		double theta = 0.02;
+		double rbar = 0.04;
+		double Kr = 0.3;
+		double sigmar = 0.1;
+
+		std::cout << "    K = " << K << std::endl
+			<< "    T = " << T << std::endl
+			<< "    v = " << v << std::endl
+			<< "    theta = " << theta << std::endl
+			<< "    Kv = " << Kv << std::endl
+			<< "    Kr = " << Kr << std::endl
+			<< "    rbar = " << rbar << std::endl
+			<< "    sigmav = " << sigmav << std::endl
+			<< "    sigmar = " << sigmar << std::endl
+			<< "    rho12 = " << rho12 << std::endl
+			<< "    closedForm = " << closedForm << std::endl << std::endl;
+
+		auto correlationMatrix = createMatrix(rho12, 0.0, 0.0);
+
+		std::cout << "Correlation Matrix:" << std::endl;
+
+		for (auto r = 0; r < 3; r++) {
+			std::cout << " : ";
+
+			for (auto c = 0; c < 3; c++)
+				std::cout << std::setw(7) << std::fixed << std::setprecision(2) << correlationMatrix[r][c] << " : ";
+
+			std::cout << std::endl;
+		}
+
+		std::cout << std::endl;
+
+		auto SimStart = std::chrono::system_clock::now();
+		auto results = simulateMCEMCPU(K, T, v, Kv, sigmav, theta,
+			rbar, Kr, sigmar, closedForm, correlationMatrix);
+		auto SimEnd = std::chrono::system_clock::now();
+
+		std::cout << "Results:" << std::endl
+			<< "   Mean: " << results[_RESULT_MEAN_] << std::endl
+			<< "   Variance: " << results[_RESULT_VAR_] << std::endl
+			<< "   N: " << results[_RESULT_N_] << std::endl;
+		
+		std::chrono::duration<double> runtime = SimEnd - SimStart;
+		
+		std::cout << "   Runtime: " << runtime.count() << " seconds" << std::endl << std::endl;
+
+		std::cout << "=== Finished " << p << " ===" << std::endl << std::endl;
+	}
+
+
+	//
+	// Wrap up
+	//
+
+	auto Finished = std::chrono::system_clock::now();
 
 	return _OKAY_;
 }
