@@ -53,10 +53,10 @@
     <ClInclude Include="Results.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="multiplyMatrixVector.cpp">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="multiplyMatrixVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Welford.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -74,6 +74,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="createMatrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="multiplyMatrixVector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Welford.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

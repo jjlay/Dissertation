@@ -157,6 +157,7 @@
     <ClCompile Include="importParameters.cpp" />
     <ClCompile Include="importRawData.cpp" />
     <ClCompile Include="parseRow.cpp" />
+    <ClCompile Include="Welford.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="parameters.csv" />
@@ -176,6 +177,7 @@
     <ClInclude Include="Results.h" />
     <ClInclude Include="ReturnValues.h" />
     <ClInclude Include="Trim.h" />
+    <ClInclude Include="Welford.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
