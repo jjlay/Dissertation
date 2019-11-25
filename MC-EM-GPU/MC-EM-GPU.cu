@@ -1,6 +1,6 @@
 
 /*
- * Single threaded CPU Based Monte Carlo Simulation of European Put
+ * Single GPU Based Monte Carlo Simulation of European Put
  * Euler-Muryama Method
  *
  * Implementation of
@@ -30,24 +30,22 @@
  *
  */
 
-
 //
-// CUDA includes
+// CUDA Includes
 //
 
 #include "cuda_runtime.h"
 #include "device_launch_parameters.h"
 
 
- //
- // Standard Includes
- //
+//
+// Standard Includes
+//
 
 #include <iostream>
 #include <iomanip>
 #include <random>
 #include <chrono>
-
 
 //
 // STL Includes
@@ -66,7 +64,7 @@
 #include "../Common/Crash.h"
 #include "../Common/createMatrix.h"
 
-#include "Simulate-MC-EM-GPU.h"
+#include "Simulate-MC-EM-CPU.h"
 
 
 //
@@ -150,7 +148,7 @@ int main(int argc, char* argv[])
 		std::cout << std::endl;
 
 		auto SimStart = std::chrono::system_clock::now();
-		auto results = simulateMCEMGPU(S0, r0, v0, K, T, v, Kv, sigmav, theta,
+		auto results = simulateMCEMCPU(S0, r0, v0, K, T, v, Kv, sigmav, theta,
 			rbar, Kr, sigmar, closedForm, correlationMatrix);
 		auto SimEnd = std::chrono::system_clock::now();
 

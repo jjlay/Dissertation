@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{94ef7218-51c9-49a7-9055-f3463972b0ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{1378e013-f847-48db-899c-89ba5b789acd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="MC-EM-GPU.cu">
+      <Filter>Source</Filter>
+    </CudaCompile>
+    <CudaCompile Include="Simulate-MC-EM-GPU.cu">
+      <Filter>Source</Filter>
+    </CudaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Simulate-MC-EM-GPU.cuh">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
