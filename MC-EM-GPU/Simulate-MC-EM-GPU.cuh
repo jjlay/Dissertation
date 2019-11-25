@@ -32,3 +32,24 @@
 
 #pragma once
 
+
+
+//
+// Local includes
+//
+
+#include "../Common/Results.h"
+
+
+//
+// STL includes
+//
+
+#include <array>
+
+
+std::array<double, _RESULT_WIDTH_> simulateMCEMGPU(double pS0, double pr0, double pv0, double pK, double pT,
+	double pv, double pKv, double psigmav, double theta, double rbar, double Kr,
+	double psigmar, double pclosedForm,
+	std::array<std::array<double, 3>, 3> pcorrelationMatrix);
+

@@ -63,8 +63,9 @@
 #include "../Common/importParameters.h"
 #include "../Common/Crash.h"
 #include "../Common/createMatrix.h"
+#include "../Common/Results.h"
 
-#include "Simulate-MC-EM-CPU.h"
+#include "Simulate-MC-EM-GPU.cuh"
 
 
 //
@@ -148,7 +149,7 @@ int main(int argc, char* argv[])
 		std::cout << std::endl;
 
 		auto SimStart = std::chrono::system_clock::now();
-		auto results = simulateMCEMCPU(S0, r0, v0, K, T, v, Kv, sigmav, theta,
+		auto results = simulateMCEMGPU(S0, r0, v0, K, T, v, Kv, sigmav, theta,
 			rbar, Kr, sigmar, closedForm, correlationMatrix);
 		auto SimEnd = std::chrono::system_clock::now();
 
