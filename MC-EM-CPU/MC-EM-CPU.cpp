@@ -105,18 +105,24 @@ int main(int argc, char *argv[])
 		double rbar = 0.04;
 		double Kr = 0.3;
 		double sigmar = 0.1;
+		double S0 = 100.0;
+		double r0 = 0.04;
+		double v0 = v;
 
-		std::cout << "    K = " << K << std::endl
-			<< "    T = " << T << std::endl
-			<< "    v = " << v << std::endl
-			<< "    theta = " << theta << std::endl
-			<< "    Kv = " << Kv << std::endl
-			<< "    Kr = " << Kr << std::endl
-			<< "    rbar = " << rbar << std::endl
-			<< "    sigmav = " << sigmav << std::endl
-			<< "    sigmar = " << sigmar << std::endl
-			<< "    rho12 = " << rho12 << std::endl
-			<< "    closedForm = " << closedForm << std::endl << std::endl;
+		std::cout << "    K = " << std::fixed << std::setprecision(2) << K << std::endl
+			<< "    S0 = " << std::fixed << std::setprecision(2) << S0 << std::endl
+			<< "    r0 = " << std::fixed << std::setprecision(2) << r0 << std::endl
+			<< "    v0 = " << std::fixed << std::setprecision(2) << v0 << std::endl
+			<< "    T = " << std::fixed << std::setprecision(4) << T << std::endl
+			<< "    v = " << std::fixed << std::setprecision(2) << v << std::endl
+			<< "    theta = " << std::fixed << std::setprecision(2) << theta << std::endl
+			<< "    Kv = " << std::fixed << std::setprecision(2) << Kv << std::endl
+			<< "    Kr = " << std::fixed << std::setprecision(2) << Kr << std::endl
+			<< "    rbar = " << std::fixed << std::setprecision(2) << rbar << std::endl
+			<< "    sigmav = " << std::fixed << std::setprecision(2) << sigmav << std::endl
+			<< "    sigmar = " << std::fixed << std::setprecision(2) << sigmar << std::endl
+			<< "    rho12 = " << std::fixed << std::setprecision(4) << rho12 << std::endl
+			<< "    closedForm = " << std::fixed << std::setprecision(4) << closedForm << std::endl << std::endl;
 
 		auto correlationMatrix = createMatrix(rho12, 0.0, 0.0);
 
@@ -134,18 +140,26 @@ int main(int argc, char *argv[])
 		std::cout << std::endl;
 
 		auto SimStart = std::chrono::system_clock::now();
-		auto results = simulateMCEMCPU(K, T, v, Kv, sigmav, theta,
+		auto results = simulateMCEMCPU(S0, r0, v0, K, T, v, Kv, sigmav, theta,
 			rbar, Kr, sigmar, closedForm, correlationMatrix);
 		auto SimEnd = std::chrono::system_clock::now();
 
 		std::cout << "Results:" << std::endl
-			<< "   Mean: " << results[_RESULT_MEAN_] << std::endl
-			<< "   Variance: " << results[_RESULT_VAR_] << std::endl
-			<< "   N: " << results[_RESULT_N_] << std::endl;
+			<< "   Mean: " << std::fixed << std::setprecision(4) << results[_RESULT_MEAN_] << std::endl
+			<< "   Variance: " << std::fixed << std::setprecision(4) << results[_RESULT_VAR_] << std::endl
+			<< "   N: " << std::fixed << std::setprecision(0) << results[_RESULT_N_] << std::endl
+			<< "   Steps: " << std::fixed << std::setprecision(0) << results[_RESULT_STEPS_] << std::endl;
 		
 		std::chrono::duration<double> runtime = SimEnd - SimStart;
 		
 		std::cout << "   Runtime: " << runtime.count() << " seconds" << std::endl << std::endl;
+
+		std::cout << "Error:" << std::endl
+			<< "   Strong error: " << std::scientific << std::setprecision(2) << results[_ERROR_STRONG_] 
+			<< " (" << std::fixed << 100.0 * results[_ERROR_STRONG_] / closedForm << "%)" << std::endl 
+			<< "   Weak error: " << std::scientific << std::setprecision(2) << results[_ERROR_WEAK_] 
+			<< " (" << std::fixed << 100.0 * results[_ERROR_WEAK_] / closedForm << "%)" << std::endl
+			<< std::endl;
 
 		std::cout << "=== Finished " << p << " ===" << std::endl << std::endl;
 	}
