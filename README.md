@@ -5,7 +5,7 @@ Source code for dissertation
 
 | Project | Status | Commment |
 |---------|--------|----------|
-| [WeakStrongCPU](https://github.com/jjlay/Dissertation/tree/master/WeakStrongCPU) | In Process | |
+| [WeakStrongCPU](https://github.com/jjlay/Dissertation/tree/master/WeakStrongCPU) | Uploaded | |
 
 
 ### Chapter Two : Antithetic Multilevel Monte Carlo
