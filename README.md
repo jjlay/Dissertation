@@ -32,9 +32,6 @@ Source code for dissertation
 | CPU-MC-MIL | Not Copied | |
 | CPU-MLMC-EM | Not Copied | |
 | CPU-MLMC-MIL | Not Copied | |
-| Forecast-CPU | Not Copied | |
-| Forecast-GPU | Not Copied | |
-| Forecast-MPIGPU | Not Copied | |
 | GPU-AMLMC-EM | Not Copied | |
 | GPU-AMLMC-MIL | Not Copied | |
 | GPU-MC-EM | Not Copied | |
