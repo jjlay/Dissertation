@@ -22,7 +22,7 @@ Source code for dissertation
 
 ### Chapter Four : Applications in Finance
 
-| Project | Status | Commment |
+| Project | Status | Platform | Algorithm | Discretization | Comment |
 |---------|--------|----------|
 | [MC-EM-CPU ](https://github.com/jjlay/Dissertation/tree/master/MC-EM-CPU) | In Process | |
 | [MLMC-EM-CPU](https://github.com/jjlay/Dissertation/tree/master/MLMC-EM-CPU) | Not Copied | |
@@ -38,8 +38,6 @@ Source code for dissertation
 | GPU-MC-MIL | Not Copied | |
 | GPU-MLMC-EM | Not Copied | |
 | GPU-MLMC-MIL | Not Copied | |
-| MC-EM-CPU | Not Copied | |
-| MC-EM-GPU | Not Copied | |
 | MGPU-AMLMC-EM | Not Copied | |
 | MGPU-AMLMC-MIL | Not Copied | |
 | MGPU-MC-EM | Not Copied | |
