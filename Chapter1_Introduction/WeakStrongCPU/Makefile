@@ -4,7 +4,7 @@ CFLAGS = -std=c++17
 WeakStrongCPU : WeakStrongCPU.o
 	$(CC) $(CFLAGS) -o WeakStrongCPU WeakStrongCPU.o
 
-WeakStrongCPU.o : WeakStrongCPU.cpp
+WeakStrongCPU.o : WeakStrongCPU.cpp ReturnValues.h
 	$(CC) $(CFLAGS) -c WeakStrongCPU.cpp
 
 clean :
