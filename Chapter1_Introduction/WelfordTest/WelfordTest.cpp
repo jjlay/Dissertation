@@ -25,8 +25,8 @@
 // Local includes
 //
 
-#include "../Common/Welford.h"
-#include "../Common/ReturnValues.h"
+#include "Welford.h"
+#include "ReturnValues.h"
 
 
 //

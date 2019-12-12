@@ -33,7 +33,7 @@
 // Local Includes
 //
 
-#include "../Common/ReturnValues.h"
+#include "ReturnValues.h"
 
 
 //
@@ -73,7 +73,7 @@ int main(int argc, char* argv[]) {
 	double S = 0.0, dS = 0.0, dW = 0.0;
 
 	// Error variables
-	
+
 	double sumS = 0.0, sumError = 0.0, sumS2 = 0.0;
 
 	// Perform simulation
@@ -88,7 +88,7 @@ int main(int argc, char* argv[]) {
 
 			S += dS;
 		}
-	
+
 		sumS += S;
 		sumS2 += S * S;
 		sumError += abs(S - analytical);
@@ -99,16 +99,13 @@ int main(int argc, char* argv[]) {
 	double mean = sumS / static_cast<double>(numberSamples);
 	double strongError = abs(mean - analytical);
 	double weakError = sumError / static_cast<double>(numberSamples);
-	double variance = 0.0;
 
 	// Display results
 
 	std::cout << "E[S] = " << std::fixed << mean << std::endl
-		<< "Variance = " << std::fixed << variance << std::endl << std::endl
 		<< "Analytical = " << std::fixed << analytical << std::endl
 		<< "Strong error = " << std::scientific << strongError << std::endl
 		<< "Weak error = " << std::scientific << weakError << std::endl << std::endl;
 
 	return _OKAY_;
 }
-
