@@ -83,7 +83,7 @@ int main(int argc, char* argv[]) {
 		S = S0;
 
 		for (auto step = 0; step < numberSteps; step++) {
-			dW = normal(generator) * dt;
+			dW = normal(generator) * sqrtdt;
 			dS = r * S * dt + v * S * dW;
 
 			S += dS;
