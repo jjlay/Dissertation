@@ -83,7 +83,6 @@ Source code for dissertation
 | Project | Status | Commment |
 |---------|--------|----------|
 | [WelfordTest](https://github.com/jjlay/Dissertation/tree/master/WelfordTest) | Uploaded | Validates the Welford algorithm in [Common](https://github.com/jjlay/Dissertation/tree/master/Common) |
-| [Common](https://github.com/jjlay/Dissertation/tree/master/Common) | In Process | Common functions and definitions for projects |
 
 
 
