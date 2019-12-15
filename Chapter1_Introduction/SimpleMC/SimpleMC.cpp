@@ -1,3 +1,18 @@
+/*
+ * Simple Multilevel Monte Carlo
+ * Single Threaded CPU Version
+ *
+ * JJ Lay
+ * Middle Tennessee State University
+ * October 2014
+ *
+ * DATE        AUTHOR  COMMENTS
+ * ----------  ------  ---------------
+ * 2014-10-07  JJL     Initial version
+ * 
+ * 
+ */
+
 //
 // Local includes
 //
@@ -17,8 +32,8 @@
 // Function: main()
 //
 // Parameters:
-//    argc - 
-//    argv[] - 
+//    argc - Number of command line parameters
+//    argv[] - Command line parameters
 //
 // Returns:
 //    Completion status
@@ -74,4 +89,3 @@ int main(int argc, char* argv[]) {
 
 	return _OKAY_;
 }
-
