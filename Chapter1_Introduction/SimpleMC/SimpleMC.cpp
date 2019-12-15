@@ -1,5 +1,5 @@
 /*
- * Simple Multilevel Monte Carlo
+ * Simple Monte Carlo
  * Single Threaded CPU Version
  *
  * JJ Lay
