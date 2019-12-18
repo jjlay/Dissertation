@@ -74,37 +74,70 @@ int main(int argc, char* argv[]) {
 		variance[level] = 0.0;
 	}
 
-	double sumS = 0.0;
 	unsigned int m = 0;
 
-	for (auto level = initialLevel; level <= stopLevel; level++) {
-		int numberSteps = pow(2, level);
+	//
+	// Perform the simulation of each multilevel Monte Carlo level
+	//
 
-		double dt = T / static_cast<double>(numberSteps);
-		double sqrtdt = sqrt(dt);
+	for (auto level = initialLevel+1; level <= stopLevel; level++) {
+		int numberStepsf = pow(2, level);
+		double dtf = T / static_cast<double>(numberStepsf);
+		double sqrtdtf = sqrt(dtf);
+
+		int numberStepsc = pow(2, level - 1);
+		double dtc = T / static_cast<double>(numberStepsc);
+		double sqrtdtc = sqrt(dtc);
+
+
+		//
+		// Perform the simulations
+		//
 
 		for (auto sim = 0; sim < initialSimulations; sim++) {
-			auto S = S0;
+			auto Sf = S0;
+			auto Sc = S0;
 
-			for (auto step = 0; step < numberSteps; step++) {
-				auto dW = normal(generator) * sqrtdt;
-				auto dS = r * S * dt + sigma * S * dW;
-				S += dS;
+			//
+			// Step through time
+			//
+
+			for (auto step = 0; step < numberStepsf; step++) {
+				auto dWf1 = normal(generator) * sqrtdtf;
+				auto dWf2 = normal(generator) * sqrtdtf;
+				auto dWc = dWf1 + dWf2;
+
+				// Fine 
+				auto dSf = r * Sf * dtf + sigma * Sf * dWf1;
+				Sf += dSf;
+				dSf = r * Sf * dtf + sigma * Sf * dWf2;
+				Sf += dSf;
+
+				// Coarse
+				auto dSc = r * Sc * dtc + sigma * Sc * dWc;
+				Sc += dSc;
 			}
 
-			sumS += S;
+			results[m] += Sf - Sc;
 		}
 
-		results[m] = sumS / static_cast<double>(samples[level]);
+		results[m] = results[m] / static_cast<double>(samples[level]);
 		variance[m] = 0.0;
 
 		m++;
 	}
 
 
-/*
+
 	std::cout << "Simulation results:" << std::endl
 		<< "Analytical solution: " << analytical << std::endl
+		<< "Simulation results:" << std::endl;
+
+	for (auto level = 0; level < numberLevels; level++) {
+		std::cout << "   Level[" << initialLevel + level << "] = " << results[level] << std::endl;
+	}
+
+/*
 		<< "Simulation: " << ES << std::endl
 		<< "Variance: " << variance << std::endl << std::endl
 		<< "Error: " << std::scientific << ES - analytical << std::endl;
