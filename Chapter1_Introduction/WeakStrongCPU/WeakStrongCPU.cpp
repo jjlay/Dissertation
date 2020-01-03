@@ -102,7 +102,10 @@ int main(int argc, char* argv[]) {
 
 	// Display results
 
-	std::cout << "E[S] = " << std::fixed << mean << std::endl
+	std::cout << "Steps = " << std::fixed << numberSteps << std::endl
+	 	<< "dt = " << std::scientific << dt << std::endl
+		<< "Samples = " << std::scientific << numberSamples << std::endl
+		<< "E[S] = " << std::fixed << mean << std::endl
 		<< "Analytical = " << std::fixed << analytical << std::endl
 		<< "Strong error = " << std::scientific << strongError << std::endl
 		<< "Weak error = " << std::scientific << weakError << std::endl << std::endl;
