@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WelfordTest.cpp">
+    <ClCompile Include="parseRowTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -25,13 +25,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ReturnValues.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Chapter4_Finance\Common\Welford.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Chapter4_Finance\Common\parseRow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Chapter4_Finance\Common\ReturnValues.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WelfordTest", "WelfordTest\WelfordTest.vcxproj", "{29FD1DE7-B81C-4B2F-94A5-78A3018D0C6B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "parseRowTest", "parseRowTest\parseRowTest.vcxproj", "{F516F007-F6D2-42C1-93B2-00C278E4CD09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{29FD1DE7-B81C-4B2F-94A5-78A3018D0C6B}.Release|x64.Build.0 = Release|x64
 		{29FD1DE7-B81C-4B2F-94A5-78A3018D0C6B}.Release|x86.ActiveCfg = Release|Win32
 		{29FD1DE7-B81C-4B2F-94A5-78A3018D0C6B}.Release|x86.Build.0 = Release|Win32
+		{F516F007-F6D2-42C1-93B2-00C278E4CD09}.Debug|x64.ActiveCfg = Debug|x64
+		{F516F007-F6D2-42C1-93B2-00C278E4CD09}.Debug|x64.Build.0 = Debug|x64
+		{F516F007-F6D2-42C1-93B2-00C278E4CD09}.Debug|x86.ActiveCfg = Debug|Win32
+		{F516F007-F6D2-42C1-93B2-00C278E4CD09}.Debug|x86.Build.0 = Debug|Win32
+		{F516F007-F6D2-42C1-93B2-00C278E4CD09}.Release|x64.ActiveCfg = Release|x64
+		{F516F007-F6D2-42C1-93B2-00C278E4CD09}.Release|x64.Build.0 = Release|x64
+		{F516F007-F6D2-42C1-93B2-00C278E4CD09}.Release|x86.ActiveCfg = Release|Win32
+		{F516F007-F6D2-42C1-93B2-00C278E4CD09}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
