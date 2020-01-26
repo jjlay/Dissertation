@@ -18,8 +18,8 @@
     <ClCompile Include="WelfordTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Welford.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="..\..\Chapter4_Finance\Common\Welford.cpp">
+      <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -31,7 +31,7 @@
     <ClInclude Include="ReturnValues.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Welford.h">
+    <ClInclude Include="..\..\Chapter4_Finance\Common\Welford.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
