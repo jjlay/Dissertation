@@ -144,7 +144,6 @@
     <ClCompile Include="importRawData.cpp" />
     <ClCompile Include="multiplyMatrixVector.cpp" />
     <ClCompile Include="parseRow.cpp" />
-    <ClCompile Include="Test_Welford.cpp" />
     <ClCompile Include="Welford.cpp" />
   </ItemGroup>
   <ItemGroup>

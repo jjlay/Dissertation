@@ -33,9 +33,6 @@
     <ClCompile Include="parseRow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Test_Welford.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Welford.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
