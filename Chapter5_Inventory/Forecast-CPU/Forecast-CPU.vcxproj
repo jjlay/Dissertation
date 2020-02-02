@@ -138,10 +138,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Crash.cpp" />
     <ClCompile Include="Forecast-CPU.cpp" />
+    <ClCompile Include="forecast.cpp" />
+    <ClCompile Include="importPINS.cpp" />
+    <ClCompile Include="importRawData.cpp" />
+    <ClCompile Include="parseRow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Crash.h" />
+    <ClInclude Include="forecast.h" />
+    <ClInclude Include="importPINS.h" />
+    <ClInclude Include="importRawData.h" />
+    <ClInclude Include="parseRow.h" />
     <ClInclude Include="ReturnValues.h" />
+    <ClInclude Include="Trim.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bcp.csv" />
+    <None Include="rental.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

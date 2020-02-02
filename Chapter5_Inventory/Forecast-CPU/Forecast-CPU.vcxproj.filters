@@ -18,10 +18,51 @@
     <ClCompile Include="Forecast-CPU.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="parseRow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="importRawData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Crash.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="importPINS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forecast.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ReturnValues.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="importRawData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="parseRow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Trim.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Crash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="importPINS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="forecast.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bcp.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="rental.csv">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
