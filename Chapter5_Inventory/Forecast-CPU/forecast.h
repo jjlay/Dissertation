@@ -1,4 +1,4 @@
 #pragma once
 
 
-double* triple(double* pData, int pLen, double pAlpha, double pBeta, double pGamma);
+double* triple(double* pData, int pLen, int cycle, double pAlpha, double pBeta, double pGamma);
