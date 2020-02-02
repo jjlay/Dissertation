@@ -144,13 +144,16 @@
     <ClCompile Include="importPINS.cpp" />
     <ClCompile Include="importRawData.cpp" />
     <ClCompile Include="parseRow.cpp" />
+    <ClCompile Include="regression.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="common.h" />
     <ClInclude Include="Crash.h" />
     <ClInclude Include="forecast.h" />
     <ClInclude Include="importPINS.h" />
     <ClInclude Include="importRawData.h" />
     <ClInclude Include="parseRow.h" />
+    <ClInclude Include="regression.h" />
     <ClInclude Include="ReturnValues.h" />
     <ClInclude Include="Trim.h" />
   </ItemGroup>

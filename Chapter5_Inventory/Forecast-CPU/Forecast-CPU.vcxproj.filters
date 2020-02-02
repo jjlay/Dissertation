@@ -33,6 +33,9 @@
     <ClCompile Include="forecast.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="regression.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ReturnValues.h">
@@ -54,6 +57,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="forecast.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="regression.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
