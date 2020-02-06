@@ -10,4 +10,6 @@ Forecast : forecast.o Forecast-CPU.o Crash.o importPINS.o importRawData.o parseR
 clean :
 	rm -f Forecast
 	rm -f *.o
+nolog :
+	rm -f Forecast-CPU.?17*
 

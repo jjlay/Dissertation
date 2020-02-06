@@ -1,0 +1,25 @@
+#PBS -N Forecast-CPU
+#PBS -q H30
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=00:01:00
+
+
+echo "================== nodes ===================="
+cat $PBS_NODEFILE
+echo "================= job info  ================="
+echo "Date:   $(date)"
+echo "Job ID: $PBS_JOBID"
+echo "Queue:  $PBS_QUEUE"
+echo "Cores:  $PBS_NP"
+echo
+
+cd $PBS_O_WORKDIR
+
+time /home/jjlay/github/Dissertation/Chapter5_Inventory/Forecast-CPU/Forecast
+retval=$?
+
+echo
+echo "================== done ====================="
+echo "Date:   $(date)"
+echo "retval: $retval"
+
