@@ -37,6 +37,7 @@ int main(int argc, char* argv[]) {
 		data[i] = std::stod(s);
 	}
 
+	// Perform the forecast
 	auto forecasts = triple(data, 24, 12, alpha, beta, gamma);
 
 	return _OKAY_;
