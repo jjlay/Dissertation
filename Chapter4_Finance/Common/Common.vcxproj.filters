@@ -36,6 +36,9 @@
     <ClCompile Include="Welford.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="parseCommandLine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Crash.h">
@@ -69,6 +72,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Welford.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="parseCommandLine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
