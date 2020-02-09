@@ -5,7 +5,7 @@ CCFlags = -std=c++17
 .PHONY: clean
 
 clean:
-	rm *.o CPU-MC-EM
+	rm -f *.o CPU-MC-EM
 
 
 		
