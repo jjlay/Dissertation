@@ -66,7 +66,7 @@ int main(int argc, char* argv[]) {
 
     double S0 = 0.0, v0 = 0.0, r0 = 0.0, T = 0.0, K = 0.0, 
         Kv = 0.0, Kr = 0.0, sigmav = 0.0, sigmar = 0.0,
-        vbar = 0.0, rbar = 0.0;
+        vbar = 0.0, rbar = 0.0, actual = 0.0;
     unsigned int steps = 0, sims = 0;
 
     //
@@ -130,7 +130,12 @@ int main(int argc, char* argv[]) {
         // Number of simulations
         if (key == "sims")
             sims = std::stoi(value);
+
+        // Number of simulations
+        if (key == "actual")
+            actual = std::stod(value);
     }
+
 
     std::cout << std::endl << "======================" << std::endl
         << "Simulation Parameters" << std::endl
@@ -140,13 +145,27 @@ int main(int argc, char* argv[]) {
         << "v0 = " << v0 << std::endl
         << "T = " << T << std::endl << std::endl
         << "sims = " << sims << std::endl
-        << "steps = " << steps << std::endl;
+        << "steps = " << steps << std::endl << std::endl
+        << "Closed form solution = " << actual << std::endl;
+
 
     //
     // Perform simulation
     //
 
-    auto monteCarloResult = MonteCarlo();
+    auto monteCarloResult = MonteCarlo(S0, v0, r0, T, K, Kv, Kr, sigmav, sigmar, vbar, rbar, steps, sims, actual);
+
+    std::cout << std::endl << "======================" << std::endl
+        << "Simulation Results" << std::endl
+        << "======================" << std::endl
+        << "Mean = " << std::get<_Tuple_Mean_>(monteCarloResult) << std::endl
+        << "Variance = " << std::get<_Tuple_Variance_>(monteCarloResult) << std::endl
+        << "Samples = " << std::get<_Tuple_Samples_>(monteCarloResult) << std::endl << std::endl;
+
+    if (actual != 0.0) {
+        std::cout << "Error of the mean = " << std::get<_Tuple_Samples_>(monteCarloResult) - actual << std::endl
+            << "Mean of the error = " << std::get<_Tuple_MeanError_>(monteCarloResult) << std::endl;
+    }
 
 
     //

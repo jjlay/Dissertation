@@ -52,14 +52,20 @@
 // Returns:
 //
 
-std::tuple<double, double, double> MonteCarlo() {
+std::tuple<double, double, double, double> MonteCarlo(
+    double pS0, double pv0, double pr0, double pT, double pK, 
+    double pKv, double pKr, double psigmav, double psigmar, 
+    double pvbar, double prbar, unsigned int psteps, unsigned int psims,
+    double pactual
+    ) {
 
     // <Mean, Variance, Samples>
-    std::tuple<double, double, double> result;
+    std::tuple<double, double, double, double> result;
 
     std::get<_Tuple_Mean_>(result) = 0.0;
     std::get<_Tuple_Variance_>(result) = 0.0;
     std::get<_Tuple_Samples_>(result) = 0.0;
+    std::get<_Tuple_MeanError_>(result) = 0.0;
 
 
     return result;

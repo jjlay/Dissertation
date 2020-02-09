@@ -42,14 +42,20 @@
 // Definitions
 //
 
-#define _Tuple_Mean_      0
-#define _Tuple_Variance_  1
-#define _Tuple_Samples_   2
+#define _Tuple_Mean_        0
+#define _Tuple_Variance_    1
+#define _Tuple_Samples_     2
+#define _Tuple_MeanError_   3
 
 
 //
 // Function: MonteCarlo()
 //
 
-std::tuple<double, double, double> MonteCarlo();
+std::tuple<double, double, double, double> MonteCarlo(
+    double pS0, double pv0, double pr0, double pT, double pK,
+    double pKv, double pKr, double psigmav, double psigmar,
+    double pvbar, double prbar, unsigned int psteps, unsigned int psims,
+    double pactual
+);
 
