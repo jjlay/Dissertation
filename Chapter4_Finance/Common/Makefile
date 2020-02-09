@@ -2,7 +2,8 @@ CC = module load gcc/6.2.0 ; g++
 CFLAGS = -std=c++17
 
 all : Crash.o createMatrix.o importParameters.o importRawData.o \
-	multiplyMatrixVector.o parseRow.o Welford.o
+	multiplyMatrixVector.o parseRow.o Welford.o parseCommandLine.o
+
 
 Crash.o : Crash.cpp ReturnValues.h
 	$(CC) $(CFLAGS) -c Crash.cpp
@@ -25,6 +26,10 @@ parseRow.o : parseRow.cpp Trim.h
 
 Welford.o : Welford.cpp
 	$(CC) $(CFLAGS) -c Welford.cpp
+
+parseCommandLine.o : parseCommandLine.cpp
+	$(CC) $(CFLAGS) -c parseCommandLine.cpp
+
 
 clean :
 	rm -f *.o
