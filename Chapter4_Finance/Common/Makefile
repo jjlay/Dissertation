@@ -1,4 +1,4 @@
-CC = g++
+CC = module load gcc/6.2.0 ; g++
 CFLAGS = -std=c++17
 
 all : Crash.o createMatrix.o importParameters.o importRawData.o \
