@@ -45,6 +45,16 @@
 
 
 //
+// Standard includes
+//
+
+#include <iostream>
+#include <iomanip>
+#include <math.h>
+#include <random>
+
+
+//
 // Function: MonteCarlo()
 //
 // Parameters:
@@ -52,21 +62,77 @@
 // Returns:
 //
 
-std::tuple<double, double, double, double> MonteCarlo(
-    double pS0, double pv0, double pr0, double pT, double pK, 
-    double pKv, double pKr, double psigmav, double psigmar, 
-    double pvbar, double prbar, unsigned int psteps, unsigned int psims,
-    double pactual
+std::tuple<double, double, double, double, double>
+	MonteCarlo(
+    	double pS0, double pv0, double pr0, double pT, double pK, 
+    	double pKv, double pKr, double psigmav, double psigmar, 
+    	double pvbar, double prbar, unsigned int psteps, 
+		unsigned int psims,
+    	double pactual
     ) {
 
-    // <Mean, Variance, Samples>
-    std::tuple<double, double, double, double> result;
+    // <Mean, Variance, Samples, WeakError, StrongError>
+    std::tuple<double, double, double, double, double> result;
 
     std::get<_Tuple_Mean_>(result) = 0.0;
     std::get<_Tuple_Variance_>(result) = 0.0;
     std::get<_Tuple_Samples_>(result) = 0.0;
-    std::get<_Tuple_MeanError_>(result) = 0.0;
+    std::get<_Tuple_WeakError_>(result) = 0.0;
+    std::get<_Tuple_StrongError_>(result) = 0.0;
+	
+	//
+	// Variables
+	//
 
+	double dt = pT / static_cast<double>(psteps);
+	double sqrtdt = sqrt(dt);
+
+	std::cout << "dt = " << dt << ", sqrtdt = " << sqrtdt << std::endl;
+ 
+	double S = 0.0, v = 0.0, r = 0.0, dv = 0.0, dr = 0.0, dS = 0.0,
+		sumS = 0.0, weakSumS = 0.0;
+	//
+	// Perform simulations
+	//
+
+	for (auto sim = 0; sim < psims; sim++) {
+		S = pS0;
+		v = pv0;
+		r = pr0;
+
+		for (auto step = 0; step < psteps; step++) {
+
+			dS = 0.0;
+			dr = 0.0;
+			dv = 0.0;
+
+			S += dS;
+			v += dv;
+			r += dr;
+
+			S = (S < 0.0 ? 0.0 : S);
+			r = (r < 0.0 ? 0.0 : r);
+			v = (v < 0.0 ? 0.0 : v);
+		}
+
+		sumS += S;
+		weakSumS += (S - pactual);
+	}
+
+	//
+	// Results
+	//
+
+	sumS = sumS / static_cast<double>(psims);
+	weakSumS = weakSumS / static_cast<double>(psims);
+
+
+    std::get<_Tuple_Mean_>(result) = sumS;
+    std::get<_Tuple_Variance_>(result) = 0.0;
+    std::get<_Tuple_Samples_>(result) = 0.0;
+    std::get<_Tuple_WeakError_>(result) = weakSumS;
+    std::get<_Tuple_StrongError_>(result) = sumS - pactual;
 
     return result;
 }
+

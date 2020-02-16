@@ -1,4 +1,3 @@
-
 /*
  * Single threaded CPU Based Monte Carlo Simulation of European Put
  * Euler-Muryama Method
@@ -79,7 +78,8 @@ int main(int argc, char* argv[]) {
         auto key = p.first;
         auto value = p.second;
 
-        std::cout << "Key: " << key << " :: " << "Value: " << value << std::endl;
+        std::cout << "Key: " << key << " :: " << "Value: " 
+		<< value << std::endl;
 
         // Initial asset price
         if (key == "S0")
@@ -153,18 +153,31 @@ int main(int argc, char* argv[]) {
     // Perform simulation
     //
 
-    auto monteCarloResult = MonteCarlo(S0, v0, r0, T, K, Kv, Kr, sigmav, sigmar, vbar, rbar, steps, sims, actual);
+    auto monteCarloResult = MonteCarlo(S0, v0, r0, T, K, Kv, 
+		Kr, sigmav, sigmar, vbar, rbar, steps, sims, actual);
+
+	//
+	// Display results
+	//
 
     std::cout << std::endl << "======================" << std::endl
         << "Simulation Results" << std::endl
         << "======================" << std::endl
-        << "Mean = " << std::get<_Tuple_Mean_>(monteCarloResult) << std::endl
-        << "Variance = " << std::get<_Tuple_Variance_>(monteCarloResult) << std::endl
-        << "Samples = " << std::get<_Tuple_Samples_>(monteCarloResult) << std::endl << std::endl;
+        << "Mean = " << std::get<_Tuple_Mean_>(monteCarloResult) 
+		<< std::endl
+        << "Variance = " 
+		<< std::get<_Tuple_Variance_>(monteCarloResult) 
+		<< std::endl
+        << "Samples = " << std::get<_Tuple_Samples_>(monteCarloResult) 
+		<< std::endl << std::endl;
 
     if (actual != 0.0) {
-        std::cout << "Error of the mean = " << std::get<_Tuple_Samples_>(monteCarloResult) - actual << std::endl
-            << "Mean of the error = " << std::get<_Tuple_MeanError_>(monteCarloResult) << std::endl;
+        std::cout << "Weak Error = "
+			<< std::get<_Tuple_WeakError_>(monteCarloResult)
+			<< std::endl
+            << "Strong Error = " 
+			<< std::get<_Tuple_StrongError_>(monteCarloResult) 
+			<< std::endl;
     }
 
 
