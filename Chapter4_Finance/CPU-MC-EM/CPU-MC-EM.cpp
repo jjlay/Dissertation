@@ -44,6 +44,7 @@
 //
 
 #include <iostream>
+#include <chrono>
 
 
 //
@@ -67,6 +68,11 @@ int main(int argc, char* argv[]) {
         Kv = 0.0, Kr = 0.0, sigmav = 0.0, sigmar = 0.0,
         vbar = 0.0, rbar = 0.0, actual = 0.0;
     unsigned int steps = 0, sims = 0;
+
+	auto rho = new double[9];
+	
+	memset(rho, 0.0, 9);
+	rho[0] = 1.0; rho[4] = 1.0; rho[8] = 1.0;
 
     //
     // Process commandline parameters
@@ -148,13 +154,28 @@ int main(int argc, char* argv[]) {
         << "steps = " << steps << std::endl << std::endl
         << "Closed form solution = " << actual << std::endl;
 
+	std::cout << std::endl << "Correlation Matrix:" << std::endl;
+
+	for (int i = 0; i < 3; i++) {
+		std::cout << " : ";
+
+		for (int j = 0; j < 3; j++) {
+			std::cout << rho[(i*3)+j] << " : ";
+		}
+
+		std::cout << std::endl;
+	}
+
+	std::cout << std::endl;
 
     //
     // Perform simulation
     //
 
     auto monteCarloResult = MonteCarlo(S0, v0, r0, T, K, Kv, 
-		Kr, sigmav, sigmar, vbar, rbar, steps, sims, actual);
+		Kr, sigmav, sigmar, vbar, rbar, steps, sims, actual,
+		rho);
+
 
 	//
 	// Display results

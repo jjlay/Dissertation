@@ -67,8 +67,7 @@ std::tuple<double, double, double, double, double>
     	double pS0, double pv0, double pr0, double pT, double pK, 
     	double pKv, double pKr, double psigmav, double psigmar, 
     	double pvbar, double prbar, unsigned int psteps, 
-		unsigned int psims,
-    	double pactual
+		unsigned int psims, double pactual, double *prh0
     ) {
 
     // <Mean, Variance, Samples, WeakError, StrongError>
@@ -91,6 +90,14 @@ std::tuple<double, double, double, double, double>
  
 	double S = 0.0, v = 0.0, r = 0.0, dv = 0.0, dr = 0.0, dS = 0.0,
 		sumS = 0.0, weakSumS = 0.0;
+	
+	auto dW = new double[3];
+
+	// Random
+	std::default_random_engine randGenerator;
+	std::normal_distribution<double> randNorm(0.0, 1.0);
+	
+
 	//
 	// Perform simulations
 	//

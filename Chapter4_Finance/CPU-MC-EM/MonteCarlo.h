@@ -58,6 +58,6 @@ std::tuple<double, double, double, double, double>
     	double pS0, double pv0, double pr0, double pT, double pK,
     	double pKv, double pKr, double psigmav, double psigmar,
     	double pvbar, double prbar, unsigned int psteps, 
-		unsigned int psims, double pactual
-);
+		unsigned int psims, double pactual, double *prho
+	);
 
