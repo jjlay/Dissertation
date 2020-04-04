@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.1062
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleMC", "..\SimpleMC\SimpleMC.vcxproj", "{DCE646B6-F8E5-4741-803A-ACA799E51E41}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WeakStrongCPU", "WeakStrongCPU\WeakStrongCPU.vcxproj", "{EAF22980-0BA3-469F-A822-A2A5D2516F17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{DCE646B6-F8E5-4741-803A-ACA799E51E41}.Release|x64.Build.0 = Release|x64
 		{DCE646B6-F8E5-4741-803A-ACA799E51E41}.Release|x86.ActiveCfg = Release|Win32
 		{DCE646B6-F8E5-4741-803A-ACA799E51E41}.Release|x86.Build.0 = Release|Win32
+		{EAF22980-0BA3-469F-A822-A2A5D2516F17}.Debug|x64.ActiveCfg = Debug|x64
+		{EAF22980-0BA3-469F-A822-A2A5D2516F17}.Debug|x64.Build.0 = Debug|x64
+		{EAF22980-0BA3-469F-A822-A2A5D2516F17}.Debug|x86.ActiveCfg = Debug|Win32
+		{EAF22980-0BA3-469F-A822-A2A5D2516F17}.Debug|x86.Build.0 = Debug|Win32
+		{EAF22980-0BA3-469F-A822-A2A5D2516F17}.Release|x64.ActiveCfg = Release|x64
+		{EAF22980-0BA3-469F-A822-A2A5D2516F17}.Release|x64.Build.0 = Release|x64
+		{EAF22980-0BA3-469F-A822-A2A5D2516F17}.Release|x86.ActiveCfg = Release|Win32
+		{EAF22980-0BA3-469F-A822-A2A5D2516F17}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
