@@ -1,0 +1,11 @@
+dt : 0.5 : MEAN : mean: -0.000781356 : stdev: 0.0316371 : STD DEV : mean: 0.999704 : stdev: 0.0226315
+dt : 0.25 : MEAN : mean: -0.00100813 : stdev: 0.0313588 : STD DEV : mean: 0.998763 : stdev: 0.0227048
+dt : 0.125 : MEAN : mean: -0.00199985 : stdev: 0.0325605 : STD DEV : mean: 1.00006 : stdev: 0.0215161
+dt : 0.0625 : MEAN : mean: 0.00100153 : stdev: 0.0313241 : STD DEV : mean: 0.999978 : stdev: 0.0222772
+dt : 0.03125 : MEAN : mean: -0.000413581 : stdev: 0.0306133 : STD DEV : mean: 0.999228 : stdev: 0.0226624
+dt : 0.015625 : MEAN : mean: -6.94127e-05 : stdev: 0.0322064 : STD DEV : mean: 0.998864 : stdev: 0.0229861
+dt : 0.0078125 : MEAN : mean: 0.000128882 : stdev: 0.032019 : STD DEV : mean: 0.999203 : stdev: 0.0217489
+dt : 0.00390625 : MEAN : mean: -0.00182069 : stdev: 0.0318664 : STD DEV : mean: 0.999237 : stdev: 0.0225778
+dt : 0.00195312 : MEAN : mean: 0.000567931 : stdev: 0.0318455 : STD DEV : mean: 0.998832 : stdev: 0.022731
+dt : 0.000976562 : MEAN : mean: -0.00116874 : stdev: 0.0314703 : STD DEV : mean: 0.999716 : stdev: 0.0229257
+dt : 0.000488281 : MEAN : mean: -0.00136208 : stdev: 0.0308527 : STD DEV : mean: 0.999042 : stdev: 0.0226916

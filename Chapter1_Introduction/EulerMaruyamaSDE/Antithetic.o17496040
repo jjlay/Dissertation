@@ -1,0 +1,14 @@
+antithetic : Euler-Maruyama : dt : 0.5 : MEAN : mean: 105.06 : stdev: 0.0972507 : STD DEV : mean: 3.07442 : stdev: 0.0696056
+antithetic : Milstein : dt : 0.5 : MEAN : mean: 105.06 : stdev: 0.0972584 : STD DEV : mean: 3.07473 : stdev: 0.069778
+antithetic : Euler-Maruyama : dt : 0.25 : MEAN : mean: 105.091 : stdev: 0.0975954 : STD DEV : mean: 3.11052 : stdev: 0.0708588
+antithetic : Milstein : dt : 0.25 : MEAN : mean: 105.091 : stdev: 0.0976464 : STD DEV : mean: 3.11063 : stdev: 0.0710084
+antithetic : Euler-Maruyama : dt : 0.125 : MEAN : mean: 105.105 : stdev: 0.102107 : STD DEV : mean: 3.13424 : stdev: 0.0676192
+antithetic : Milstein : dt : 0.125 : MEAN : mean: 105.105 : stdev: 0.102143 : STD DEV : mean: 3.13424 : stdev: 0.0677041
+antithetic : Euler-Maruyama : dt : 0.0625 : MEAN : mean: 105.122 : stdev: 0.0984139 : STD DEV : mean: 3.14419 : stdev: 0.0702046
+antithetic : Milstein : dt : 0.0625 : MEAN : mean: 105.122 : stdev: 0.0984331 : STD DEV : mean: 3.14424 : stdev: 0.0702554
+antithetic : Euler-Maruyama : dt : 0.03125 : MEAN : mean: 105.122 : stdev: 0.096396 : STD DEV : mean: 3.14694 : stdev: 0.071565
+antithetic : Milstein : dt : 0.03125 : MEAN : mean: 105.122 : stdev: 0.0964252 : STD DEV : mean: 3.14696 : stdev: 0.0715737
+antithetic : Euler-Maruyama : dt : 0.015625 : MEAN : mean: 105.125 : stdev: 0.101519 : STD DEV : mean: 3.14855 : stdev: 0.0725783
+antithetic : Milstein : dt : 0.015625 : MEAN : mean: 105.125 : stdev: 0.10153 : STD DEV : mean: 3.14856 : stdev: 0.0725896
+antithetic : Euler-Maruyama : dt : 0.0078125 : MEAN : mean: 105.126 : stdev: 0.100979 : STD DEV : mean: 3.15071 : stdev: 0.0686987
+antithetic : Milstein : dt : 0.0078125 : MEAN : mean: 105.126 : stdev: 0.100983 : STD DEV : mean: 3.15072 : stdev: 0.0686961
