@@ -66,6 +66,12 @@ int main(int argc, char* argv[]) {
 
 	double sumS = 0.0;
 
+	auto samples = new double[numberSimulations];
+	
+	for (auto i = 0; i < numberSimulations; i++)
+		samples[i] = 0.0;
+
+
 	for (auto sim = 0; sim < numberSimulations; sim++) {
 		auto S = S0;
 
@@ -76,10 +82,16 @@ int main(int argc, char* argv[]) {
 		}
 
 		sumS += S;
+		samples[sim] = S;
 	}
 
 	auto ES = sumS / static_cast<double>(numberSimulations);
 	double variance = 0.0;
+
+	for (auto i = 0; i < numberSimulations; i++)
+		variance += pow(samples[i] - ES, 2.0);
+
+	variance = variance / static_cast<double>(numberSimulations - 1);
 
 	std::cout << "Simulation results:" << std::endl
 		<< "Analytical solution: " << analytical << std::endl
@@ -89,3 +101,5 @@ int main(int argc, char* argv[]) {
 
 	return _OKAY_;
 }
+
+
