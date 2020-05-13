@@ -1,3 +1,6 @@
+all : sde antithetic
+
+
 sde : sde.o
 	g++ -std=c++17 -o sde sde.o
 
