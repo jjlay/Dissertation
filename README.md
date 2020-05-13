@@ -5,7 +5,7 @@ Source code for my dissertation:
 
 Also see:
 
-[Lay, Harold A.](https://github.com/jjlay/), [Zane Colgin](https://github.com/zanecolgin), [Viktor Reshniak](https://github.com/vreshniak), and Abdul Q. M. Khaliq. "On the implementation of multilevel Monte Carlo simulation of the stochastic volatility and interest rate model using multi-GPU clusters". *Monte Carlo Methods and Applications* 24.4: 309-321. [https://doi.org/10.1515/mcma-2018-2025](https://doi.org/10.1515/mcma-2018-2025) Web.
+[Lay, Harold A.](https://github.com/jjlay/), [Zane Colgin](https://github.com/zanecolgin), [Viktor Reshniak](https://github.com/vreshniak), and [Abdul Q. M. Khaliq](https://www.mtsu.edu/faculty/abdul-khaliq). "On the implementation of multilevel Monte Carlo simulation of the stochastic volatility and interest rate model using multi-GPU clusters". *Monte Carlo Methods and Applications* 24.4: 309-321. [https://doi.org/10.1515/mcma-2018-2025](https://doi.org/10.1515/mcma-2018-2025) Web.
 
 
 ### Chapter One : Introduction
