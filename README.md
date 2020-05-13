@@ -1,5 +1,8 @@
 # Dissertation
-Source code for dissertation
+Source code for my dissertation:
+
+["Simulation of stochastic systems using antithetic multilevel Monte Carlo on GPUs"](https://jewlscholar.mtsu.edu/handle/mtsu/6160)
+
 
 ### Chapter One : Introduction
 
