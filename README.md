@@ -1,7 +1,7 @@
 # Dissertation
 Source code for my dissertation:
 
-["Simulation of stochastic systems using antithetic multilevel Monte Carlo on GPUs"](https://jewlscholar.mtsu.edu/handle/mtsu/6160)
+Lay, Harold A. *Simulation of stochastic systems using antithetic multilevel Monte Carlo on GPUs.* 2020. Middle Tennessee State University, PhD dissertation. *ProQuest*, [https://jewlscholar.mtsu.edu/handle/mtsu/6160](https://jewlscholar.mtsu.edu/handle/mtsu/6160).
 
 
 ### Chapter One : Introduction
