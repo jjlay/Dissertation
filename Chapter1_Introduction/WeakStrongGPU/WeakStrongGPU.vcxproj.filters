@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{b4c81b6e-fa6e-47a5-a3d1-c82dc10c6f56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{3c4d541f-4126-4fb7-815d-a6be9fbcbe65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Miscellaneous">
+      <UniqueIdentifier>{258de85f-b9ee-4002-aa6b-b49de1cbadaf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile">
+      <Filter>Miscellaneous</Filter>
+    </None>
+    <None Include="README.md">
+      <Filter>Miscellaneous</Filter>
+    </None>
+    <None Include="WeakStrong.qsub">
+      <Filter>Miscellaneous</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="WeakStrongCUDA.cu">
+      <Filter>Source</Filter>
+    </CudaCompile>
+  </ItemGroup>
+</Project>

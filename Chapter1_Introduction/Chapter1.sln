@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleMC", "SimpleMC\Simple
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EulerMaruyamaSDE", "EulerMaruyamaSDE\EulerMaruyamaSDE.vcxproj", "{5E488044-BB11-4AEF-8A7B-A5B09E09276F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WeakStrongGPU", "WeakStrongGPU\WeakStrongGPU.vcxproj", "{C1EEA2BE-C64C-4759-9369-646D3648483D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,12 @@ Global
 		{5E488044-BB11-4AEF-8A7B-A5B09E09276F}.Release|x64.Build.0 = Release|x64
 		{5E488044-BB11-4AEF-8A7B-A5B09E09276F}.Release|x86.ActiveCfg = Release|Win32
 		{5E488044-BB11-4AEF-8A7B-A5B09E09276F}.Release|x86.Build.0 = Release|Win32
+		{C1EEA2BE-C64C-4759-9369-646D3648483D}.Debug|x64.ActiveCfg = Debug|x64
+		{C1EEA2BE-C64C-4759-9369-646D3648483D}.Debug|x64.Build.0 = Debug|x64
+		{C1EEA2BE-C64C-4759-9369-646D3648483D}.Debug|x86.ActiveCfg = Debug|x64
+		{C1EEA2BE-C64C-4759-9369-646D3648483D}.Release|x64.ActiveCfg = Release|x64
+		{C1EEA2BE-C64C-4759-9369-646D3648483D}.Release|x64.Build.0 = Release|x64
+		{C1EEA2BE-C64C-4759-9369-646D3648483D}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
 
 	double Epsilon = 1E-3;
 	unsigned int Steps = 1000;
-	int Threads = 1024;
+	int Threads = 100;
 	unsigned int Samples = 1 + TotalSimsDesired / Threads;
 
 	//
