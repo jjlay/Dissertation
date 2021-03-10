@@ -2,19 +2,14 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source">
-      <UniqueIdentifier>{04cb4df9-bd22-49aa-a716-19ef8e2aa20c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Miscellaneous">
-      <UniqueIdentifier>{2d7ba514-0495-4705-a815-4dc94e775bad}</UniqueIdentifier>
+      <UniqueIdentifier>{3ec535a5-a66c-423c-b724-56bfbd67d185}</UniqueIdentifier>
     </Filter>
     <Filter Include="Headers">
-      <UniqueIdentifier>{8c250f2d-739a-412d-ab18-9e81e8955991}</UniqueIdentifier>
+      <UniqueIdentifier>{937b0953-701d-4b68-879d-56051c95447e}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="WeakStrongCPU.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
+    <Filter Include="Miscellaneous">
+      <UniqueIdentifier>{25dacc3b-9dee-4319-89a1-af0001ea4038}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Makefile">
@@ -23,6 +18,11 @@
     <None Include="README.md">
       <Filter>Miscellaneous</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SimpleMC.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ReturnValues.h">
